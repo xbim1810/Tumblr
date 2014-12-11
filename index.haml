@@ -1,0 +1,129 @@
+!!!5
+%html{lang:"en"}
+  %head
+    %title {Title}{block:PostTitle}{PostTitle}{/block:PostTitle}
+    %meta{charset: "utf-8"}
+    %meta{name: "viewport", content:"width=device-width, initial-scale=1.0"}
+    %link{rel: "stylesheet", media: "screen", href: "http://xbim1810.github.io/css/reset.css"}
+    %link{rel: "stylesheet", media: "screen", href: "http://xbim1810.github.io/css/formalize.css"}
+    %link{rel: "stylesheet", media: "screen", href: "http://xbim1810.github.io/css/screen.css"}
+    %link{rel: "stylesheet", media: "screen", href: "http://xbim1810.github.io/css/tumblr.css"}
+  %body
+    %header#header
+      %h1
+        %a{href: "{BlogURL}"} {Title}
+      %h2 {Description}
+      %nav#navigation
+        %ul
+          %li
+            %a{href:"/overview"} Overview
+          %li
+            %a{href:"/contact"} Contact
+    %main#main
+      .content
+        {block:Posts}
+          {block:Text}
+          .post
+            {block:Title}
+              %h3
+                %a{href:"{Permalink}"} {Title}
+            {/block:Title}
+            {Body}
+            %ul.like-reblog
+              %li
+                {LikeButton}
+              %li
+                {ReblogButton}
+              %li
+                {block:NoteCount}
+                  %a{href:"{Permalink}"} {NoeCountWithLabel}
+                {/block:NoteCount}
+              %li
+                {block:Date}
+                  %a{href:"{Permalink}"} {Timeago}
+                {/block:Date}
+          {block:PostNotes}
+            {PostNotes}
+          {/block:PostNotes}
+        {/block:Text}
+
+        {block:Photo}
+        .post
+          %img{src:"{PhotoURL-500}"}
+          {block:Caption}
+            {Caption}
+          {/block:Caption}
+            %ul.like-reblog
+              %li
+                {LikeButton}
+              %li
+                {ReblogButton}
+              %li
+                {block:NoteCount}
+                  %a{href:"{Permalink}"} {NoeCountWithLabel}
+                {/block:NoteCount}
+              %li
+                {block:Date}
+                  %a{href:"{Permalink}"} {Timeago}
+                {/block:Date}
+          {block:PostNotes}
+            {PostNotes}
+          {/block:PostNotes}
+        {/block:Photo}
+
+        {block:Quote}
+        .post
+          {Quote}
+          {block:Source} <br>&mdash;
+            {Source}
+          {/block:Source}
+            %ul.like-reblog
+              %li
+                {LikeButton}
+              %li
+                {ReblogButton}
+              %li
+                {block:NoteCount}
+                  %a{href:"{Permalink}"} {NoeCountWithLabel}
+                {/block:NoteCount}
+              %li
+                {block:Date}
+                  %a{href:"{Permalink}"} {Timeago}
+                {/block:Date}
+              {block:PostNotes}
+                {PostNotes}
+              {/block:PostNotes}
+        {/block:Quote}
+
+        {block:Video}
+        .post
+          {Video-500}
+          {block:Caption}
+            {Caption}
+          {/block:Caption}
+          %ul.like-reblog
+            %li
+              {LikeButton}
+            %li
+              {ReblogButton}
+            %li
+              {block:NoteCount}
+                %a{href:"{Permalink}"} {NoeCountWithLabel}
+              {/block:NoteCount}
+            %li
+              {block:Date}
+                %a{href:"{Permalink}"} {Timeago}
+              {/block:Date}
+            {block:PostNotes}
+              {PostNotes}
+            {/block:PostNotes}
+        {/block:Video}
+
+      {/block:Posts}
+
+    %footer#footer
+      %p Copyright @ 2014 by Bing Xue
+        %a{href:"{Permalink}"}Contact me
+              
+	 
+           

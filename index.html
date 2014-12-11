@@ -1,0 +1,159 @@
+
+<html lang='en'>
+  <head>
+    <title>{Title}{block:PostTitle}{PostTitle}{/block:PostTitle}</title>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='stylesheet' media='screen' href='http://xbim1810.github.io/css/reset.css' />
+    <link rel='stylesheet' media='screen' href='http://xbim1810.github.io/css/formalize.css' />
+    <link rel='stylesheet' media='screen' href='http://xbim1810.github.io/css/screen.css' />
+    <link rel='stylesheet' media='screen' href='http://xbim1810.github.io/css/tumblr.css' />
+  </head>
+  <body>
+    <header id='header'>
+      <h1>
+        <a href='{BlogURL}'>{Title}</a>
+      </h1>
+      <h2>{Description}</h2>
+      <nav id='navigation'>
+        <ul>
+          <li>
+            <a href='/overview'>Overview</a>
+          </li>
+          <li>
+            <a href='/contact'>Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id='main'>
+      <div class='content'>
+        {block:Posts}
+          {block:Text}
+          <div class='post'>
+            {block:Title}
+              <h3>
+                <a href='{Permalink}'>{Title}</a>
+              </h3>
+            {/block:Title}
+            {Body}
+            <ul class='like-reblog'>
+              <li>
+                {LikeButton}
+              </li>
+              <li>
+                {ReblogButton}
+              </li>
+              <li>
+                {block:NoteCount}
+                  <a href='{Permalink}'>{NoeCountWithLabel}</a>
+                {/block:NoteCount}
+              </li>
+              <li>
+                {block:Date}
+                  <a href='{Permalink}'>{Timeago}</a>
+                {/block:Date}
+              </li>
+            </ul>
+          </div>
+          {block:PostNotes}
+            {PostNotes}
+          {/block:PostNotes}
+        {/block:Text}
+        {block:Photo}
+        <div class='post'>
+          <img src='{PhotoURL-500}'>{block:Caption}
+            {Caption}
+          </img>
+          {/block:Caption}
+            <ul class='like-reblog'>
+              <li>
+                {LikeButton}
+              </li>
+              <li>
+                {ReblogButton}
+              </li>
+              <li>
+                {block:NoteCount}
+                  <a href='{Permalink}'>{NoeCountWithLabel}</a>
+                {/block:NoteCount}
+              </li>
+              <li>
+                {block:Date}
+                  <a href='{Permalink}'>{Timeago}</a>
+                {/block:Date}
+              </li>
+            </ul>
+          {block:PostNotes}
+            {PostNotes}
+          {/block:PostNotes}
+        </div>
+        {/block:Photo}
+        {block:Quote}
+        <div class='post'>
+          {Quote}
+          {block:Source} <br>&mdash;
+            {Source}
+          {/block:Source}
+            <ul class='like-reblog'>
+              <li>
+                {LikeButton}
+              </li>
+              <li>
+                {ReblogButton}
+              </li>
+              <li>
+                {block:NoteCount}
+                  <a href='{Permalink}'>{NoeCountWithLabel}</a>
+                {/block:NoteCount}
+              </li>
+              <li>
+                {block:Date}
+                  <a href='{Permalink}'>{Timeago}</a>
+                {/block:Date}
+              </li>
+              {block:PostNotes}
+                {PostNotes}
+              {/block:PostNotes}
+            </ul>
+        </div>
+        {/block:Quote}
+        {block:Video}
+        <div class='post'>
+          {Video-500}
+          {block:Caption}
+            {Caption}
+          {/block:Caption}
+          <ul class='like-reblog'>
+            <li>
+              {LikeButton}
+            </li>
+            <li>
+              {ReblogButton}
+            </li>
+            <li>
+              {block:NoteCount}
+                <a href='{Permalink}'>{NoeCountWithLabel}</a>
+              {/block:NoteCount}
+            </li>
+            <li>
+              {block:Date}
+                <a href='{Permalink}'>{Timeago}</a>
+              {/block:Date}
+            </li>
+            {block:PostNotes}
+              {PostNotes}
+            {/block:PostNotes}
+          </ul>
+        </div>
+        {/block:Video}
+      </div>
+      {/block:Posts}
+    </main>
+    <footer id='footer'>
+      <p>Copyright @ 2014 by Bing Xue
+        <a href='{Permalink}'>Contact me</a>
+      </p>
+    </footer>
+  </body>
+</html>
