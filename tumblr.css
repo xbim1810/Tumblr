@@ -34,6 +34,7 @@ nav#navigation li {
       margin-right: 10px;
 }
 .post {
+       font-family: inherit;
        background: #fff;
        margin: 40px auto;
        padding: 20px;
