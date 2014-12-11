@@ -20,28 +20,27 @@
           %li
             %a{href:"/contact"} Contact
     %main#main
-      .content
-        {block:Posts}
-          {block:Text}
-          .post
-            {block:Title}
-              %h3
-                %a{href:"{Permalink}"} {Title}
-            {/block:Title}
-            {Body}
-            %ul.like-reblog
-              %li
-                {LikeButton}
-              %li
-                {ReblogButton}
-              %li
-                {block:NoteCount}
-                  %a{href:"{Permalink}"} {NoeCountWithLabel}
-                {/block:NoteCount}
-              %li
-                {block:Date}
-                  %a{href:"{Permalink}"} {Timeago}
-                {/block:Date}
+      {block:Posts}
+        {block:Text}
+        .post
+          {block:Title}
+            %h3
+              %a{href:"{Permalink}"} {Title}
+          {/block:Title}
+          {Body}
+          %ul.like-reblog
+            %li
+              {LikeButton}
+            %li
+              {ReblogButton}
+            %li
+              {block:NoteCount}
+                %a{href:"{Permalink}"} {NoeCountWithLabel}
+              {/block:NoteCount}
+            %li
+              {block:Date}
+                %a{href:"{Permalink}"} {Timeago}
+              {/block:Date}
           {block:PostNotes}
             {PostNotes}
           {/block:PostNotes}

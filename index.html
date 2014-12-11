@@ -27,38 +27,37 @@
       </nav>
     </header>
     <main id='main'>
-      <div class='content'>
-        {block:Posts}
-          {block:Text}
-          <div class='post'>
-            {block:Title}
-              <h3>
-                <a href='{Permalink}'>{Title}</a>
-              </h3>
-            {/block:Title}
-            {Body}
-            <ul class='like-reblog'>
-              <li>
-                {LikeButton}
-              </li>
-              <li>
-                {ReblogButton}
-              </li>
-              <li>
-                {block:NoteCount}
-                  <a href='{Permalink}'>{NoeCountWithLabel}</a>
-                {/block:NoteCount}
-              </li>
-              <li>
-                {block:Date}
-                  <a href='{Permalink}'>{Timeago}</a>
-                {/block:Date}
-              </li>
-            </ul>
-          </div>
+      {block:Posts}
+        {block:Text}
+        <div class='post'>
+          {block:Title}
+            <h3>
+              <a href='{Permalink}'>{Title}</a>
+            </h3>
+          {/block:Title}
+          {Body}
+          <ul class='like-reblog'>
+            <li>
+              {LikeButton}
+            </li>
+            <li>
+              {ReblogButton}
+            </li>
+            <li>
+              {block:NoteCount}
+                <a href='{Permalink}'>{NoeCountWithLabel}</a>
+              {/block:NoteCount}
+            </li>
+            <li>
+              {block:Date}
+                <a href='{Permalink}'>{Timeago}</a>
+              {/block:Date}
+            </li>
+          </ul>
           {block:PostNotes}
             {PostNotes}
           {/block:PostNotes}
+        </div>
         {/block:Text}
         {block:Photo}
         <div class='post'>
@@ -147,7 +146,6 @@
           </ul>
         </div>
         {/block:Video}
-      </div>
       {/block:Posts}
     </main>
     <footer id='footer'>
